@@ -9,6 +9,23 @@ public class ContaBancaria {
         this.saldoConta = 0;
     }
 
+    public String getTitular() {
+        return this.titular;
+    }
+
+    public String getNumeroConta() {
+        return this.numeroConta;
+    }
+
+    public void setTitular(String titular) {
+        if (titular.isEmpty()) {
+            throw new IllegalArgumentException("O titular deve ter um nome definido");
+        }
+        else {
+            this.titular = titular;
+        }
+    }
+
     public void depositar(double deposito) {
         if (deposito <= 0 ) {
             throw new IllegalArgumentException("O valor deve ser maior que zero.");
